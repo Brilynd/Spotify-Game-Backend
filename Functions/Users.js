@@ -3,7 +3,7 @@ async function CreateUser (client,userInfo){
     try{
         console.log(userInfo)
         await client.connect();
-        await client.db('Spotify-Higher-Lower').collection('UserInfo').updateOne({UserID:userInfo.UserID},{$set:{Username:userInfo.Username,UserID:userInfo.UserID,Score:[]}},{upsert:true})
+        await client.db('Spotify-Higher-Lower').collection('UserInfo').updateOne({UserID:userInfo.UserID},{$set:{Username:userInfo.Username,UserID:userInfo.UserID}},{upsert:true})
 
     }
     catch(e){
