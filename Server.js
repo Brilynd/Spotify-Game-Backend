@@ -46,6 +46,6 @@ app.post('/leaderboard/update',(req,res)=>{
   LeaderboardMiddleware.UpdateLeaderboard(client,req.body)
   res.send(req.body)
 })
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT||5000, () =>
   console.log(`Example app listening on port ${process.env.PORT}`),
 );
