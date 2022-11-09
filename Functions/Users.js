@@ -29,9 +29,7 @@ async function GetUserScoreboard(client,userInfo){
     try{
         await client.connect()
         var response = await client.db('Spotify-Higher-Lower').collection('UserInfo').findOne({UserID:userInfo.UserID})
-        console.log(await response)
         return await response
-
     }
     catch(e){
         console.error(e)

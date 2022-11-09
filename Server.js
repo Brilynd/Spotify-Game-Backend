@@ -37,9 +37,9 @@ app.post("/user/update",(req,res)=>{
     res.send(req.body)
 });
 
-app.post('/user/scores',(req,res)=>{
+app.post('/user/scores',async(req,res)=>{
     const getUserScores = UserMiddleware.GetUserScoreboard(client,req.body)
-    res.send(getUserScores)
+    res.send(await getUserScores)
 });
 
 //Leaderboard data
